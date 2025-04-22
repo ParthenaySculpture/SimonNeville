@@ -2,7 +2,7 @@
 :root {
   --color-primary: #2d3142;
   --color-secondary: #4f5d75;
-  --color-accent: #ef8354;
+  --color-accent: #4c8c8c; /* Changé de #ef8354 à la couleur du logo */
   --color-light: #fafafa;
   --color-dark: #333;
   --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -102,6 +102,14 @@ nav {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-primary);
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
 }
 
 .nav-links {
@@ -174,7 +182,7 @@ nav {
 }
 
 .btn:hover {
-  background-color: #e47243;
+  background-color: #3e7373; /* Version plus foncée de la nouvelle couleur d'accent */
   color: white;
   transform: translateY(-2px);
   box-shadow: var(--shadow);
@@ -192,7 +200,7 @@ nav {
 }
 
 .btn-small:hover {
-  background-color: #e47243;
+  background-color: #3e7373; /* Version plus foncée de la nouvelle couleur d'accent */
   color: white;
 }
 
@@ -497,7 +505,7 @@ footer {
 }
 
 .footer-newsletter button:hover {
-  background-color: #e47243;
+  background-color: #3e7373; /* Version plus foncée de la nouvelle couleur d'accent */
 }
 
 .copyright {
@@ -563,3 +571,4 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+

@@ -3,117 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atelier de Sculpture - Contact</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Formulaire de Contact</title>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Atelier de Pierre</div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="Sculpture.html">Sculptures</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                </ul>
-            </nav>
+    <h1>Contactez-nous</h1>
+    <form action="https://formspree.io/f/2720955619241622724" method="POST">
+        <div class="form-group">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" required>
         </div>
-    </header>
-
-    <div class="hero">
-        <div class="container">
-            <h1>Contactez-nous</h1>
-            <p>Pour toute demande d'information ou pour organiser une visite de l'atelier</p>
+        
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
         </div>
-    </div>
-
-    <div class="container">
-        <div class="content">
-            <div class="contact-wrapper">
-                <div class="contact-form-container">
-                    <h2>Envoyez-nous un message</h2>
-                    
-                    <div id="statusMessage" class="alert" style="display: none;"></div>
-                    
-                    <!-- Formulaire qui envoie les données au script PHP -->
-                    <form class="contact-form" action="send_email.php" method="POST">
-                        <div class="form-group">
-                            <label for="name">Nom</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">Sujet</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        
-                        <button type="submit">Envoyer</button>
-                    </form>
-                </div>
-                
-                <div class="contact-info">
-                    <h2>Informations de contact</h2>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <h3>Adresse</h3>
-                            <p>15 Rue des Artisans</p>
-                            <p>75004 Paris, France</p>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <h3>Téléphone</h3>
-                            <p>+33 1 23 45 67 89</p>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <h3>Email</h3>
-                            <p><a href="mailto:contact@atelierdepierre.fr">contact@atelierdepierre.fr</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="hours">
-                        <h3>Horaires d'ouverture</h3>
-                        <p>Du mardi au samedi: 10h - 18h</p>
-                        <p>Visites de l'atelier sur rendez-vous uniquement</p>
-                    </div>
-                </div>
-            </div>
+        
+        <div class="form-group">
+            <label for="subject">Sujet</label>
+            <input type="text" id="subject" name="subject" required>
         </div>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Atelier de Pierre - Tous droits réservés</p>
+        
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
         </div>
-    </footer>
-
-    <script>
-        // Gestion des messages de status après soumission du formulaire
-        document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const status = urlParams.get('status');
-            const statusElement = document.getElementById('statusMessage');
-            
-            if (status === 'success') {
-                statusElement.innerHTML = 'Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.';
-                statusElement.className = 'alert success';
-                statusElement.style.display = 'block';
-            } else if (status === 'error') {
-                statusElement.innerHTML = 'Une erreur s\'est produite lors de l\'envoi. Veuillez réessayer.';
-                statusElement.className = 'alert error';
-                statusElement.style.display = 'block';
-            }
-        });
-    </script>
+        
+        <!-- Redirection après soumission -->
+        <input type="hidden" name="_next" value="https://ton-site.github.io/merci.html">
+        
+        <button type="submit">Envoyer</button>
+    </form>
 </body>
 </html>
+
+

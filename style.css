@@ -283,7 +283,7 @@ nav {
 }
 
 .intro-text {
-  max-width: 800px;
+  max-width: 100px;
   margin: 0 auto var(--spacing-lg);
   text-align: center;
 }

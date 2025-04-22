@@ -8,7 +8,7 @@
   --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
   --spacing-sm: 8px;
   --spacing-md: 20px;
-  --spacing-lg: 72px;
+  --spacing-lg: 32px;
   --spacing-xl: 64px;
   --radius: 4px;
   --transition: all 0.3s ease;
@@ -31,7 +31,7 @@ body {
 
 .container {
   width: 92%;
-  max-width: 1200px;
+  max-width: 100px;
   margin: 0 auto;
 }
 

@@ -31,7 +31,7 @@ body {
 
 .container {
   width: 92%;
-  max-width: 100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -283,7 +283,7 @@ nav {
 }
 
 .intro-text {
-  max-width: 1200px;
+  max-width: 600px;
   margin: 0 auto var(--spacing-lg);
   text-align: center;
 }

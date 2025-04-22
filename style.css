@@ -2,7 +2,7 @@
 :root {
   --color-primary: #2d3142;
   --color-secondary: #4f5d75;
-  --color-accent: #4D8387; /* Changed from orange to teal to match logo */
+  --color-accent: #ef8354;
   --color-light: #fafafa;
   --color-dark: #333;
   --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -27,13 +27,6 @@ body {
   line-height: 1.7;
   color: var(--color-dark);
   background-color: var(--color-light);
-}
-
-/* Add black top bar */
-.top-bar {
-  background-color: #000;
-  width: 100%;
-  height: 12px; /* Black bar height */
 }
 
 .container {
@@ -111,11 +104,6 @@ nav {
   color: var(--color-primary);
 }
 
-.logo img {
-  height: 50px; /* Adjust based on your logo size */
-  margin-right: var(--spacing-md);
-}
-
 .nav-links {
   display: flex;
   list-style: none;
@@ -186,7 +174,7 @@ nav {
 }
 
 .btn:hover {
-  background-color: #3d696c; /* Darker version of the teal */
+  background-color: #e47243;
   color: white;
   transform: translateY(-2px);
   box-shadow: var(--shadow);
@@ -204,7 +192,7 @@ nav {
 }
 
 .btn-small:hover {
-  background-color: #3d696c;
+  background-color: #e47243;
   color: white;
 }
 
@@ -347,7 +335,7 @@ nav {
 
 .price {
   font-weight: bold;
-  color: var(--color-accent); /* Changed to teal */
+  color: var(--color-accent);
   font-size: 1.125rem;
 }
 
@@ -509,7 +497,7 @@ footer {
 }
 
 .footer-newsletter button:hover {
-  background-color: #3d696c;
+  background-color: #e47243;
 }
 
 .copyright {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atelier de Sculpture - Contact</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -33,16 +33,7 @@
                 <div class="contact-form-container">
                     <h2>Envoyez-nous un message</h2>
                     
-                    <?php
-                    // Affichage des messages d'erreur ou de succès
-                    if (isset($_GET['status'])) {
-                        if ($_GET['status'] == 'success') {
-                            echo '<div class="alert success">Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.</div>';
-                        } else if ($_GET['status'] == 'error') {
-                            echo '<div class="alert error">Une erreur s\'est produite lors de l\'envoi. Veuillez réessayer.</div>';
-                        }
-                    }
-                    ?>
+                    <div id="statusMessage" class="alert" style="display: none;"></div>
                     
                     <!-- Formulaire qui envoie les données au script PHP -->
                     <form class="contact-form" action="send_email.php" method="POST">
@@ -105,5 +96,24 @@
             <p>&copy; 2025 Atelier de Pierre - Tous droits réservés</p>
         </div>
     </footer>
+
+    <script>
+        // Gestion des messages de status après soumission du formulaire
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+            const statusElement = document.getElementById('statusMessage');
+            
+            if (status === 'success') {
+                statusElement.innerHTML = 'Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.';
+                statusElement.className = 'alert success';
+                statusElement.style.display = 'block';
+            } else if (status === 'error') {
+                statusElement.innerHTML = 'Une erreur s\'est produite lors de l\'envoi. Veuillez réessayer.';
+                statusElement.className = 'alert error';
+                statusElement.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,53 +1,107 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atelier de Pierre - Sculpture Artisanale</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier de Pierre | Sculpture Artisanale</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Atelier de Pierre</div>
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Accueil</a></li>
-                    <li><a href="Sculpture.html">Sculptures</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="login.html">login</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div class="hero">
-        <div class="container">
-            <h1>Atelier de Sculpture Artisanale</h1>
-            <p>Bienvenue dans mon univers créatif où la pierre prend vie</p>
-        </div>
-    </div>
-
+  <header>
     <div class="container">
-        <div class="content">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>À propos de l'artiste</h2>
-                    <p>Passionné par la sculpture depuis plus de 20 ans, je travaille principalement le marbre, le bronze et le bois pour créer des œuvres uniques qui allient tradition et modernité.</p>
-                    <p>Chaque sculpture est le fruit d'un long processus créatif, depuis le croquis initial jusqu'à la réalisation finale. J'attache une importance particulière au respect des matériaux et aux techniques traditionnelles tout en y insufflant ma vision artistique contemporaine.</p>
-                    <p>Mon atelier, situé au cœur de Paris, est à la fois un lieu de création et un espace d'exposition où je vous accueille sur rendez-vous pour découvrir mes œuvres et partager ma passion.</p>
-                </div>
-                <div class="about-image">
-                    <img src="images/atelier.jpg" alt="Atelier de sculpture">
-                </div>
-            </div>
-        </div>
+      <nav>
+        <div class="logo">Atelier de Pierre</div>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Accueil</a></li>
+          <li><a href="sculptures.html" class="nav-link">Sculptures</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Atelier de Pierre - Tous droits réservés</p>
+  <section class="hero">
+    <div class="container">
+      <h1>L'Art de la Sculpture</h1>
+      <p>Des œuvres uniques où la pierre prend vie</p>
+      <a href="sculptures.html" class="btn">Découvrir nos créations</a>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="about">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>À propos de l'artiste</h2>
+          <p>Passionné par la sculpture depuis plus de 20 ans, je travaille principalement le marbre, le bronze et le bois pour créer des œuvres uniques qui allient tradition et modernité.</p>
+          <p>Chaque sculpture est le fruit d'un long processus créatif, depuis le croquis initial jusqu'à la réalisation finale.</p>
+          <a href="contact.html" class="btn-outline">Prendre rendez-vous</a>
         </div>
-    </footer>
+        <div class="about-image">
+          <img src="images/atelier.jpg" alt="Atelier de sculpture">
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-works">
+      <h2>Œuvres en vedette</h2>
+      <div class="works-grid">
+        <div class="work-card">
+          <img src="images/sculpture1.jpg" alt="Harmonie Céleste">
+          <div class="work-info">
+            <h3>Harmonie Céleste</h3>
+            <p>Bronze patiné</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <img src="images/sculpture2.jpg" alt="Ondulation">
+          <div class="work-info">
+            <h3>Ondulation</h3>
+            <p>Marbre de Carrare</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <img src="images/sculpture3.jpg" alt="Émergence">
+          <div class="work-info">
+            <h3>Émergence</h3>
+            <p>Bois d'olivier</p>
+          </div>
+        </div>
+      </div>
+      <div class="center">
+        <a href="sculptures.html" class="btn-outline">Voir toutes les œuvres</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3>Atelier de Pierre</h3>
+          <p>12 Rue des Arts<br>75003 Paris, France</p>
+          <p>contact@atelierdepiere.fr<br>+33 1 23 45 67 89</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="sculptures.html">Sculptures</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Restez informé</h4>
+          <form>
+            <input type="email" placeholder="Votre email">
+            <button type="submit">S'abonner</button>
+          </form>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Atelier de Pierre - Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

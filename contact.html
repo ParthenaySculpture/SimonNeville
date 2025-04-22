@@ -1,33 +1,128 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <title>Formulaire de Contact</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Atelier de Pierre</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Contactez-nous</h1>
-    <form action="https://getform.io/f/agdprgpb" method="POST">
-        <!-- Nom -->
-        <input type="text" name="name" placeholder="Votre nom" required>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Atelier de Pierre</div>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Accueil</a></li>
+          <li><a href="sculptures.html" class="nav-link">Sculptures</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-        <!-- Email -->
-        <input type="email" name="email" placeholder="Votre email" required>
+  <section class="page-header">
+    <div class="container">
+      <h1>Contactez-nous</h1>
+      <p>Pour toute demande d'information ou pour planifier une visite à l'atelier</p>
+    </div>
+  </section>
 
-        <!-- Message -->
-        <textarea name="message" placeholder="Votre message" required></textarea>
+  <main class="container">
+    <section class="contact">
+      <div class="contact-wrapper">
+        <div class="contact-form-container">
+          <h2>Envoyez-nous un message</h2>
+          <form class="contact-form" action="https://getform.io/f/agdprgpb" method="POST">
+            <div class="form-group">
+              <label for="name">Nom</label>
+              <input type="text" id="name" name="name" placeholder="Votre nom" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Votre email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Sujet</label>
+              <input type="text" id="subject" name="subject" placeholder="Objet de votre message">
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+            </div>
+            
+            <!-- Anti-spam -->
+            <input type="hidden" name="_captcha" value="false">
+            
+            <!-- Redirection après envoi -->
+            <input type="hidden" name="_next" value="https://ton-site.com/merci.html">
+            
+            <button type="submit" class="btn">Envoyer</button>
+          </form>
+        </div>
+        
+        <div class="contact-info">
+          <h2>Informations</h2>
+          <div class="contact-details">
+            <div class="contact-item">
+              <h3>Adresse</h3>
+              <p>12 Rue des Arts<br>75003 Paris<br>France</p>
+            </div>
+            
+            <div class="contact-item">
+              <h3>Contact</h3>
+              <p>Email: contact@atelierdepiere.fr<br>Téléphone: +33 1 23 45 67 89</p>
+            </div>
+          </div>
+          
+          <div class="hours">
+            <h3>Horaires d'ouverture</h3>
+            <p>Lundi - Vendredi: 10h00 - 18h00<br>Samedi: Sur rendez-vous<br>Dimanche: Fermé</p>
+          </div>
+          
+          <div class="map">
+            <h3>Nous trouver</h3>
+            <div class="map-container">
+              <!-- Remplacer par votre iframe Google Maps -->
+              <div class="map-placeholder">Carte de localisation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        <!-- Anti-spam -->
-        <input type="hidden" name="_captcha" value="false">
-
-        <!-- Redirection après envoi -->
-        <input type="hidden" name="_next" value="https://ton-site.com/merci.html">
-
-        <!-- Soumettre -->
-        <button type="submit">Envoyer</button>
-    </form>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3>Atelier de Pierre</h3>
+          <p>12 Rue des Arts<br>75003 Paris, France</p>
+          <p>contact@atelierdepiere.fr<br>+33 1 23 45 67 89</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="sculptures.html">Sculptures</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Restez informé</h4>
+          <form>
+            <input type="email" placeholder="Votre email">
+            <button type="submit">S'abonner</button>
+          </form>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Atelier de Pierre - Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
 

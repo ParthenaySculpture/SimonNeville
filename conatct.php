@@ -1,6 +1,6 @@
 <?php
 // Configuration
-$recipient_email = "contact@atelierdepierre.fr"; // Remplacez par votre adresse email
+$recipient_email = "clement.madignier@gmail.com"; // Remplacez par votre adresse email
 $email_subject = "Nouveau message depuis le site web";
 
 // Nettoyage et validation des données soumises

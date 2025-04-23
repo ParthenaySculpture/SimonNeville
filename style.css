@@ -1031,4 +1031,82 @@ footer::before {
   }
 }
 
+/* Ajustement de la barre de navigation - plus fine et espacée */
+header {
+  padding: var(--spacing-sm) 0; /* Réduit l'épaisseur de la barre */
+}
+
+.nav-links {
+  gap: var(--spacing-xl); /* Augmente l'espace entre les liens */
+}
+
+.nav-link {
+  padding: var(--spacing-sm) 0; /* Plus d'espace autour du texte */
+  letter-spacing: 0.7px; /* Légèrement plus espacé */
+}
+
+/* Sculptures - affichage plus épuré et compact */
+.sculptures-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Taille plus régulière */
+  gap: var(--spacing-md); /* Espace harmonieux entre les éléments */
+  max-width: 1100px; /* Limite la largeur pour éviter l'étalement */
+  margin: 0 auto var(--spacing-lg); /* Centrage horizontal */
+}
+
+.sculpture-card {
+  margin-bottom: 0; /* Supprime la marge en bas pour un look plus épuré */
+  border-radius: var(--radius-sm); /* Coins légèrement arrondis pour simplicité */
+  box-shadow: var(--shadow-small); /* Ombre plus subtile */
+}
+
+.sculpture-img {
+  height: 220px; /* Hauteur uniforme */
+}
+
+.sculpture-info {
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-sm); /* Padding réduit en bas */
+}
+
+.sculpture-info h3 {
+  font-size: 1rem; /* Taille de police uniforme */
+  margin-bottom: var(--spacing-xs); /* Moins d'espace */
+}
+
+.sculpture-info p {
+  margin-bottom: var(--spacing-xs); /* Moins d'espace */
+  line-height: 1.5; /* Hauteur de ligne réduite */
+}
+
+.sculpture-footer {
+  padding-top: var(--spacing-xs); /* Padding réduit */
+}
+
+/* Ajustements pour le header et les titres de section */
+h2::after {
+  height: 1px; /* Barre plus fine */
+  width: 30px; /* Barre plus courte */
+  margin-top: var(--spacing-xs); /* Plus d'espace entre le texte et la barre */
+}
+
+h2:hover::after {
+  width: 45px; /* Expansion plus subtile au survol */
+}
+
+/* Navigation mobile plus épurée */
+@media (max-width: 768px) {
+  .sculptures-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Colonnes plus compactes sur mobile */
+    gap: var(--spacing-sm); /* Espace réduit */
+  }
+  
+  .sculpture-img {
+    height: 180px; /* Images plus petites sur mobile */
+  }
+  
+  .nav-links.active {
+    padding: var(--spacing-sm); /* Padding réduit pour la navigation mobile */
+  }
+}
+
 

@@ -382,7 +382,7 @@ textarea {
 /* 6. Layout */
 /* 6.1 Header et navigation */
 header {
-  padding: var(--spacing-md) 0;
+  padding: var(--spacing-xs) 0; /* Réduit de md à xs */
   background-color: var(--color-off-white);
   position: sticky;
   top: 0;
@@ -392,7 +392,7 @@ header {
 }
 
 header.scrolled {
-  padding: var(--spacing-sm) 0;
+  padding: var(--spacing-xs) 0;
   background-color: rgba(250, 252, 252, 0.98);
   backdrop-filter: blur(5px);
 }
@@ -414,8 +414,8 @@ nav {
 }
 
 .logo-icon {
-  width: 32px;
-  height: 32px;
+  width: 28px; /* Réduit de 32px à 28px */
+  height: 28px; /* Réduit de 32px à 28px */
   margin-right: 10px;
   transition: var(--transition-normal);
 }
@@ -427,14 +427,14 @@ nav {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-xl); /* Augmenté de lg à xl pour plus d'espacement entre les liens */
 }
 
 .nav-link {
   font-weight: var(--font-weight-medium);
   position: relative;
-  padding: var(--spacing-xs) 0;
-  letter-spacing: 0.5px;
+  padding: var(--spacing-xs) var(--spacing-sm); /* Ajout d'un padding horizontal */
+  letter-spacing: 0.7px; /* Augmenté pour plus d'espacement entre les lettres */
   text-transform: uppercase;
   font-size: var(--font-size-sm);
 }
@@ -447,7 +447,7 @@ nav {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -2px;
+  bottom: -3px; /* Déplacé de -2px à -3px pour plus d'espace sous le texte */
   width: 0;
   height: 1px;
   background-color: var(--color-teal);
@@ -483,7 +483,7 @@ nav {
 }
 
 .page-header {
-  padding: var(--spacing-md) 0; /* Réduit de lg à md */
+  padding: var(--spacing-md) 0;
 }
 
 .hero::before,
@@ -503,14 +503,14 @@ nav {
 .page-header-content {
   position: relative;
   z-index: 1;
-  margin-bottom: var(--spacing-md); /* Ajout de marge en bas */
+  margin-bottom: var(--spacing-md);
 }
 
 .hero h1,
 .page-header h1 {
   color: white;
   font-size: var(--font-size-hero);
-  margin-bottom: var(--spacing-lg); /* Augmenté de sm à lg */
+  margin-bottom: var(--spacing-lg);
   letter-spacing: 0.5px;
 }
 
@@ -634,7 +634,7 @@ footer::before {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-xl); /* Augmenté de lg à xl pour plus d'espacement */
 }
 
 .footer-link {
@@ -643,7 +643,7 @@ footer::before {
   transition: var(--transition-normal);
   opacity: 0.8;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.7px; /* Augmenté pour plus d'espacement entre les lettres */
   position: relative;
 }
 
@@ -670,7 +670,7 @@ footer::before {
 .footer-social {
   display: flex;
   justify-content: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg); /* Augmenté de md à lg pour plus d'espacement */
   margin: var(--spacing-lg) 0;
 }
 
@@ -696,7 +696,7 @@ footer::before {
 .footer-contact {
   display: flex;
   justify-content: center;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-xl); /* Augmenté de lg à xl pour plus d'espacement */
   margin-bottom: var(--spacing-lg);
 }
 
@@ -740,7 +740,7 @@ footer::before {
   color: var(--color-dark);
   border-bottom: 1px solid transparent;
   font-size: var(--font-size-sm);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.7px; /* Augmenté pour plus d'espacement entre les lettres */
 }
 
 .filter-tag:hover {
@@ -757,8 +757,8 @@ footer::before {
 
 .sculptures-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Réduit de 220px à 180px */
-  gap: var(--spacing-xs); /* Réduit de sm à xs */
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--spacing-sm); /* Augmenté de xs à sm pour plus d'espace entre les cartes */
   margin: var(--spacing-lg) 0;
 }
 
@@ -796,7 +796,7 @@ footer::before {
 }
 
 .sculpture-img {
-  height: 240px; /* Réduit de 900px à 240px */
+  height: 240px;
   overflow: hidden;
   position: relative;
 }
@@ -965,7 +965,7 @@ footer::before {
   }
   
   header {
-    padding: var(--spacing-sm) 0;
+    padding: var(--spacing-xs) 0;
   }
   
   .nav-links {
@@ -987,6 +987,7 @@ footer::before {
     box-shadow: var(--shadow-medium);
     padding: var(--spacing-md);
     z-index: 100;
+    gap: var(--spacing-md); /* Ajout d'espacement entre les liens dans le menu mobile */
   }
 
   .footer-contact {

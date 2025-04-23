@@ -483,7 +483,7 @@ nav {
 }
 
 .page-header {
-  padding: var(--spacing-md) 0; /* Réduit de lg à md */
+  padding: var(--spacing-lg) 0;
 }
 
 .hero::before,
@@ -503,14 +503,13 @@ nav {
 .page-header-content {
   position: relative;
   z-index: 1;
-  margin-bottom: var(--spacing-md); /* Ajout de marge en bas */
 }
 
 .hero h1,
 .page-header h1 {
   color: white;
   font-size: var(--font-size-hero);
-  margin-bottom: var(--spacing-lg); /* Augmenté de sm à lg */
+  margin-bottom: var(--spacing-sm);
   letter-spacing: 0.5px;
 }
 
@@ -757,9 +756,8 @@ footer::before {
 
 .sculptures-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Réduit de 220px à 180px */
-  gap: var(--spacing-xs); /* Réduit de sm à xs */
-  margin: var(--spacing-lg) 0;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--spacing-sm);
 }
 
 .sculpture-card {
@@ -796,7 +794,7 @@ footer::before {
 }
 
 .sculpture-img {
-  height: 240px; /* Réduit de 900px à 240px */
+  height: 200px;
   overflow: hidden;
   position: relative;
 }
@@ -995,7 +993,7 @@ footer::before {
   }
 
   .sculptures-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
 }
 

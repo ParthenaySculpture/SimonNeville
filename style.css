@@ -5,47 +5,25 @@
   --color-primary-light: #3d4258;
   --color-secondary: #4f5d75;
   --color-secondary-light: #6a778f;
-  --color-accent: #4c8c8c;
-  --color-accent-dark: #3e7373;
-  --color-accent-light: #5a9d9d;
+  --color-accent: #3d7cf9;
+  --color-accent-dark: #2a5ed1;
+  --color-accent-light: #5a90ff;
   --color-light: #fafafa;
   --color-light-alt: #f0f0f0;
   --color-dark: #333333;
   --color-gray: #e1e1e1;
-  --color-accent: #3d7cf9;
-  --color-accent-dark: #2a5ed1;
-  --color-accent-light: #5a90ff;
   --color-success: #2ecc71;
   --color-warning: #f39c12;
   --color-danger: #e74c3c;
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-md: 1rem;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-pill: 9999px;
-  --shadow-small: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-large: 0 10px 15px rgba(0, 0, 0, 0.1);
-  --transition-normal: all 0.3s ease;
-  --transition-fast: all 0.15s ease;
-
   
   /* Typographie */
   --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 600;
-  --font-size-xs: 0.9rem;
-  --font-size-sm: 1rem;
-  --font-size-md: 1.25rem;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
   --font-size-lg: 1.5rem;
   --font-size-xl: 2rem;
   --font-size-xxl: 2.5rem;
@@ -61,8 +39,10 @@
   /* Design system */
   --radius-sm: 4px;
   --radius-md: 8px;
+  --radius-lg: 12px;
   --radius-full: 50%;
-  --transition-fast: all 0.2s ease;
+  --radius-pill: 9999px;
+  --transition-fast: all 0.15s ease;
   --transition-normal: all 0.3s ease;
   --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.06);
   --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -249,7 +229,7 @@ nav {
   width: 100%;
 }
 
-/* Mobile menu (ajout) */
+/* Mobile menu */
 .menu-toggle {
   display: none;
   background: none;
@@ -260,7 +240,6 @@ nav {
 }
 
 /* Boutons */
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -753,7 +732,7 @@ nav {
   font-size: var(--font-size-md);
 }
 
-/* Tags pour filtrage (ajout) */
+/* Tags pour filtrage */
 .filter-tags {
   display: flex;
   flex-wrap: wrap;
@@ -994,7 +973,7 @@ footer::before {
   font-size: var(--font-size-xs);
 }
 
-/* Animation au scroll (ajout) */
+/* Animation au scroll */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -1006,7 +985,7 @@ footer::before {
   transform: translateY(0);
 }
 
-/* Styles pour la barre de recherche (ajout) */
+/* Styles pour la barre de recherche */
 .search-container {
   position: relative;
   margin-bottom: var(--spacing-lg);
@@ -1038,7 +1017,7 @@ footer::before {
   color: var(--color-secondary);
 }
 
-/* Styles pour pagination (ajout) */
+/* Styles pour pagination */
 .pagination {
   display: flex;
   justify-content: center;
@@ -1064,145 +1043,7 @@ footer::before {
   color: white;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  :root {
-    --spacing-xl: 48px;
-  }
-  
-  .about-content,
-  .contact-wrapper {
-    flex-direction: column;
-  }
-
-  .about-text,
-  .contact-form-container {
-    margin-bottom: var(--spacing-lg);
-  }
-  
-  .about-image img {
-    margin: 0 auto;
-  }
-  
-  .hero h1,
-  .page-header h1 {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .works-grid,
-  .sculptures-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
-  
-  .footer-newsletter form {
-    flex-direction: column;
-  }
-  
-  .footer-newsletter input {
-    border-radius: var(--radius-sm);
-    margin-bottom: var(--spacing-sm);
-  }
-  
-  .footer-newsletter button {
-    border-radius: var(--radius-sm);
-  }
-  
-  .search-icon {
-    left: 15px;
-  }
-}
-
-@media (max-width: 600px) {
-  :root {
-    --spacing-lg: 24px;
-    --spacing-xl: 40px;
-  }
-  
-  .menu-toggle {
-    display: block;
-  }
-  
-  nav {
-    position: relative;
-  }
-  
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    gap: 0;
-    background-color: white;
-    box-shadow: var(--shadow-medium);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-  
-  .nav-links.open {
-    max-height: 300px;
-  }
-  
-  .nav-link {
-    padding: var(--spacing-sm) var(--spacing-md);
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid var(--color-gray);
-  }
-  
-  .nav-link::after {
-    display: none;
-  }
-  
-  h1 {
-    font-size: 1.8rem;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-  }
-  
-  .hero h1,
-  .page-header h1 {
-    font-size: 2rem;
-  }
-  
-  .contact-details {
-    grid-template-columns: 1fr;
-  }
-  
-  .pagination-item {
-    width: 35px;
-    height: 35px;
-  }
-}
-
-@media (max-width: 480px) {
-  .works-grid,
-  .sculptures-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .sculpture-img,
-  .work-image {
-    height: 200px;
-  }
-  
-  .filter-tags {
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: var(--spacing-sm);
-  }
-  
-  .filter-tag {
-    flex-shrink: 0;
-  }
-}
-
-/* Animation pour le bouton retour en haut (ajout) */
+/* Animation pour le bouton retour en haut */
 .back-to-top {
   position: fixed;
   bottom: 20px;
@@ -1233,42 +1074,27 @@ footer::before {
   transform: translateY(-3px);
 }
 
-/* Support pour le mode sombre - si souhaité (ajout optionnel) */
-@media (prefers-color-scheme: dark) {
+/* Responsive */
+@media (max-width: 900px) {
   :root {
-    --color-light: #1a1a1a;
-    --color-light-alt: #252525;
-    --color-dark: #e0e0e0;
-    --color-gray: #444;
-    --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.2);
-    --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.25);
-    --shadow-large: 0 12px 30px rgba(0, 0, 0, 0.3);
+    --spacing-xl: 48px;
   }
   
-  .work-card,
-  .sculpture-card,
-  .contact-form,
-  .contact-item,
-  .hours,
-  .pagination-item {
-    background-color: #2a2a2a;
+  .about-content,
+  .contact-wrapper {
+    flex-direction: column;
   }
   
-  header {
-    background-color: #1a1a1a;
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  .about-text,
+  .contact-form-container {
+    margin-bottom: var(--spacing-lg);
   }
   
-  input, textarea, select {
-    background-color: #333;
-    color: var(--color-dark);
+  .about-image img {
+    margin: 0 auto;
   }
   
-  .filter-tag {
-    background-color: #333;
+  .hero h1,
+  .page-header h1 {
+    font-size: 2.5rem;
   }
-  
-  .map-placeholder {
-    background-color: #2a2a2a;
-  }
-}

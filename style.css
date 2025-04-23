@@ -1,5 +1,4 @@
-/* 
- * SOMMAIRE
+/* SOMMAIRE
  * 1. Variables et configuration
  * 2. Reset et styles de base
  * 3. Typographie
@@ -32,12 +31,12 @@
   --color-accent: #E4EBF0;
   --color-accent-dark: #BFC9D0;
   --color-beige: #D6CFC1;
-  
+
   /* États */
   --color-success: #66B2A0;
   --color-warning: #E6BB7A;
   --color-danger: #D17F7F;
-  
+
   /* Typographie */
   --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
   --font-serif: 'Georgia', serif;
@@ -51,7 +50,7 @@
   --font-size-xl: 1.375rem;
   --font-size-xxl: 1.75rem;
   --font-size-hero: 2.25rem;
-  
+
   /* Espacements */
   --spacing-xxs: 2px;
   --spacing-xs: 4px;
@@ -59,7 +58,7 @@
   --spacing-md: 16px;
   --spacing-lg: 24px;
   --spacing-xl: 48px;
-  
+
   /* Design system */
   --radius-sm: 2px;
   --radius-md: 4px;
@@ -365,7 +364,7 @@ input, textarea, select {
   background-color: var(--color-off-white);
 }
 
-input:focus, 
+input:focus,
 textarea:focus,
 select:focus {
   outline: none;
@@ -454,7 +453,7 @@ nav {
   transition: var(--transition-normal);
 }
 
-.nav-link:hover::after, 
+.nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
 }
@@ -469,7 +468,7 @@ nav {
 }
 
 /* 6.2 Hero et page header */
-.hero, 
+.hero,
 .page-header {
   background-color: var(--color-teal);
   color: var(--color-off-white);
@@ -540,7 +539,7 @@ nav {
   margin: 0 auto;
 }
 
-.about-text, 
+.about-text,
 .about-image {
   flex: 1;
 }
@@ -761,7 +760,7 @@ footer::before {
 
 .sculptures-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Réduire la largeur minimale */
   gap: var(--spacing-md);
   max-width: 1000px;
   margin: 0 auto var(--spacing-lg);
@@ -776,6 +775,7 @@ footer::before {
   display: flex;
   flex-direction: column;
   position: relative;
+  margin: var(--spacing-xs); /* Ajouter une marge pour éviter que les cartes ne se touchent */
 }
 
 .sculpture-card::before {
@@ -800,7 +800,7 @@ footer::before {
 }
 
 .sculpture-img {
-  height: 200px;
+  height: 160px;
   overflow: hidden;
   position: relative;
 }
@@ -957,10 +957,14 @@ footer::before {
   .container {
     width: 95%;
   }
-  
+
   .works-grid,
   .sculptures-grid {
     gap: var(--spacing-md);
+  }
+
+  .sculptures-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Réduire la largeur minimale */
   }
 }
 
@@ -968,29 +972,29 @@ footer::before {
   html {
     font-size: 15px;
   }
-  
+
   .about-content,
   .contact-wrapper {
     flex-direction: column;
     gap: var(--spacing-lg);
   }
-  
+
   header {
     padding: var(--spacing-xxs) 0;
   }
-  
+
   nav {
     height: 50px;
   }
-  
+
   .nav-links {
     display: none;
   }
-  
+
   .menu-toggle {
     display: block;
   }
-  
+
   .nav-links.active {
     display: flex;
     flex-direction: column;
@@ -1010,11 +1014,15 @@ footer::before {
   }
 
   .sculptures-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Réduire la largeur minimale */
   }
-  
+
   .sculpture-img {
-    height: 170px;
+    height: 140px; /* Réduire la hauteur de l'image */
+  }
+
+  .sculpture-card {
+    max-height: 260px; /* Réduire la hauteur maximale de la carte */
   }
 }
 
@@ -1022,17 +1030,17 @@ footer::before {
   html {
     font-size: 14px;
   }
-  
+
   .hero h1,
   .page-header h1 {
     font-size: 1.8rem;
   }
-  
+
   .hero p,
   .page-header p {
     font-size: var(--font-size-sm);
   }
-  
+
   .works-grid {
     grid-template-columns: 1fr;
   }
@@ -1041,11 +1049,15 @@ footer::before {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-sm);
   }
-  
+
   .sculpture-img {
-    height: 150px;
+    height: 120px; /* Réduire la hauteur de l'image */
   }
-  
+
+  .sculpture-card {
+    max-height: 240px; /* Réduire la hauteur maximale de la carte */
+  }
+
   .btn {
     padding: var(--spacing-xs) var(--spacing-md);
   }
@@ -1054,188 +1066,7 @@ footer::before {
     flex-direction: column;
     gap: var(--spacing-md);
   }
-
-  /* 7.1 Page Sculptures */
-.filter-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-lg);
-  justify-content: center;
 }
 
-.filter-tag {
-  background-color: transparent;
-  padding: var(--spacing-xs) var(--spacing-md);
-  border-radius: 0;
-  cursor: pointer;
-  transition: var(--transition-normal);
-  color: var(--color-dark);
-  border-bottom: 1px solid transparent;
-  font-size: var(--font-size-xs);
-  letter-spacing: 0.5px;
-}
-
-.filter-tag:hover {
-  color: var(--color-teal);
-  border-bottom: 1px solid var(--color-teal);
-}
-
-.filter-tag.active {
-  background-color: transparent;
-  color: var(--color-teal-dark);
-  border-bottom: 1px solid var(--color-teal);
-  font-weight: var(--font-weight-medium);
-}
-
-.sculptures-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 32px;
-  max-width: 1000px;
-  margin: 0 auto var(--spacing-lg);
-}
-
-.sculpture-card {
-  background-color: white;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  box-shadow: var(--shadow-small);
-  transition: var(--transition-normal);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  max-height: 300px;
-  aspect-ratio: 3/4;
-}
-
-.sculpture-card::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: var(--color-teal);
-  opacity: 0;
-  transition: var(--transition-normal);
-}
-
-.sculpture-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-medium);
-}
-
-.sculpture-card:hover::before {
-  opacity: 0.5;
-}
-
-.sculpture-img {
-  height: 160px;
-  overflow: hidden;
-  position: relative;
-}
-
-.sculpture-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0;
-  transition: var(--transition-normal);
-}
-
-.sculpture-card:hover .sculpture-img img {
-  transform: scale(1.02);
-}
-
-.sculpture-img::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(90, 143, 143, 0.02), transparent);
-  opacity: 0;
-  transition: var(--transition-normal);
-}
-
-.sculpture-card:hover .sculpture-img::after {
-  opacity: 1;
-}
-
-.sculpture-info {
-  padding: var(--spacing-sm);
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.sculpture-info h3 {
-  margin-bottom: var(--spacing-xs);
-  color: var(--color-teal-dark);
-  font-size: 0.95rem;
-  letter-spacing: 0.25px;
-}
-
-.sculpture-info p {
-  color: var(--color-dark);
-  margin-bottom: var(--spacing-xs);
-  flex-grow: 1;
-  font-size: var(--font-size-xs);
-  line-height: 1.5;
-}
-
-.sculpture-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: var(--spacing-xs);
-  border-top: 1px solid var(--color-light-gray);
-}
-
-.price {
-  font-weight: var(--font-weight-bold);
-  color: var(--color-teal);
-  font-size: var(--font-size-sm);
-}
-
-/* Media Queries pour la section sculptures */
-@media (max-width: 992px) {
-  .sculptures-grid {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 28px;
-  }
-}
-
-@media (max-width: 768px) {
-  .sculptures-grid {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 24px;
-  }
-  
-  .sculpture-img {
-    height: 150px;
-  }
-  
-  .sculpture-card {
-    max-height: 280px;
-  }
-}
-
-@media (max-width: 480px) {
-  .sculptures-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  
-  .sculpture-img {
-    height: 130px;
-  }
-  
-  .sculpture-card {
-    max-height: 250px;
-  }
-}
 
 

@@ -1188,17 +1188,20 @@ footer::before {
   margin-bottom: var(--spacing-sm);
   color: var(--color-teal-dark);
 }
+
 .map {
   margin-top: var(--spacing-lg);
 }
 
-
 .map-container {
+  width: 100%;
+  max-width: 1200px; /* Largeur maximale de la carte */
   height: 400px;
   background-color: white;
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-small);
   overflow: hidden;
+  margin: 0 auto; /* Centre horizontalement */
 }
 
 .map-placeholder {
@@ -1209,6 +1212,7 @@ footer::before {
   background-color: var(--color-light-gray);
   color: var(--color-teal);
 }
+
 
 /* 8. Media Queries */
 @media (max-width: 1200px) {

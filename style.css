@@ -769,6 +769,8 @@ footer::before {
 }
 
 .sculpture-card {
+  width: 90%; /* Réduit la largeur des cartes */
+  margin: 0 auto; /* Centre les cartes */
   background-color: white;
   border-radius: var(--radius-sm);
   overflow: hidden;
@@ -802,7 +804,9 @@ footer::before {
 }
 
 .sculpture-img {
-  height: 600px;
+  height: 140px; /* Ajustez selon vos besoins */
+  width: 90%; /* Réduit la largeur des images */
+  margin: 0 auto; /* Centre les images */
   overflow: hidden;
   position: relative;
 }

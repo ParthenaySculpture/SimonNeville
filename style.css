@@ -804,8 +804,8 @@ footer::before {
 }
 
 .sculpture-img {
-  height: 140px; /* Ajustez selon vos besoins */
-  width: 90%; /* Réduit la largeur des images */
+  height: 200px; /* Ajustez selon vos besoins */
+  width: 80%; /* Réduit la largeur des images */
   margin: 0 auto; /* Centre les images */
   overflow: hidden;
   position: relative;
@@ -963,14 +963,14 @@ footer::before {
   .container {
     width: 95%;
   }
-
   .works-grid {
     gap: var(--spacing-md);
   }
-
   /* 3 sculptures par ligne sur écrans moyens */
   .sculptures-grid {
     grid-template-columns: repeat(3, 1fr);
+    width: 85%; /* Réduire la largeur globale de la grille */
+    margin: 0 auto; /* Centrer la grille */
   }
 }
 
@@ -978,29 +978,23 @@ footer::before {
   html {
     font-size: 15px;
   }
-
   .about-content,
   .contact-wrapper {
     flex-direction: column;
     gap: var(--spacing-lg);
   }
-
   header {
     padding: var(--spacing-xxs) 0;
   }
-
   nav {
     height: 50px;
   }
-
   .nav-links {
     display: none;
   }
-
   .menu-toggle {
     display: block;
   }
-
   .nav-links.active {
     display: flex;
     flex-direction: column;
@@ -1013,21 +1007,19 @@ footer::before {
     padding: var(--spacing-sm);
     z-index: 100;
   }
-
   .footer-contact {
     flex-direction: column;
     gap: var(--spacing-md);
   }
-
   /* 2 sculptures par ligne sur tablettes */
   .sculptures-grid {
     grid-template-columns: repeat(2, 1fr);
+    width: 80%; /* Réduire davantage la largeur sur tablettes */
+    margin: 0 auto;
   }
-
   .sculpture-img {
     height: 140px; /* Réduire la hauteur de l'image */
   }
-
   .sculpture-card {
     max-height: 260px; /* Réduire la hauteur maximale de la carte */
   }
@@ -1037,43 +1029,35 @@ footer::before {
   html {
     font-size: 14px;
   }
-
   .hero h1,
   .page-header h1 {
     font-size: 1.8rem;
   }
-
   .hero p,
   .page-header p {
     font-size: var(--font-size-sm);
   }
-
   .works-grid {
     grid-template-columns: 1fr;
   }
-
   .sculptures-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-sm);
+    width: 95%; /* Ajuster pour les petits écrans */
   }
-
   .sculpture-img {
     height: 120px; /* Réduire la hauteur de l'image */
   }
-
   .sculpture-card {
     max-height: 240px; /* Réduire la hauteur maximale de la carte */
   }
-
   .btn {
     padding: var(--spacing-xs) var(--spacing-md);
   }
-
   .footer-links {
     flex-direction: column;
     gap: var(--spacing-md);
   }
 }
-
 
 

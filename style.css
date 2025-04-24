@@ -1191,26 +1191,37 @@ footer::before {
 
 .map {
   margin-top: var(--spacing-lg);
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: var(--color-light-gray);
+  padding: var(--spacing-md) 0;
 }
 
 .map-container {
   width: 100%;
-  max-width: 1200px; /* Largeur maximale de la carte */
-  height: 400px;
+  height: 450px;
   background-color: white;
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-small);
   overflow: hidden;
-  margin: 0 auto; /* Centre horizontalement */
+  position: relative;
 }
 
 .map-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-light-gray);
   color: var(--color-teal);
+  pointer-events: none;
 }
 
 

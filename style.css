@@ -737,7 +737,7 @@ footer::before {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 80%;
   height: 100%;
   background-image: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h40v40H0z" fill="none"/><path d="M0 0h20v20H0z" fill="rgba(90, 143, 143, 0.03)"/><path d="M20 20h20v20H20z" fill="rgba(90, 143, 143, 0.03)"/></svg>');
   opacity: 0.4;
@@ -1234,7 +1234,7 @@ footer::before {
   }
   
   .sculpture-detail-image {
-    min-height: 300px;
+    min-height: 400px;
   }
 }
 
@@ -1327,7 +1327,7 @@ footer::before {
   }
   
   .sculpture-img {
-    height: 180px;
+    height: 600px;
   }
   
   .sculpture-info h3 {

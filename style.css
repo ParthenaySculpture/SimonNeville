@@ -17,7 +17,6 @@
  *    7.2 Page Contact
  * 8. Media Queries
  */
-
 /* 1. Variables et configuration */
 :root {
   /* Palette épurée */
@@ -31,12 +30,10 @@
   --color-accent: #E4EBF0;
   --color-accent-dark: #BFC9D0;
   --color-beige: #D6CFC1;
-
   /* États */
   --color-success: #66B2A0;
   --color-warning: #E6BB7A;
   --color-danger: #D17F7F;
-
   /* Typographie */
   --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
   --font-serif: 'Georgia', serif;
@@ -50,7 +47,6 @@
   --font-size-xl: 1.375rem;
   --font-size-xxl: 1.75rem;
   --font-size-hero: 2.25rem;
-
   /* Espacements */
   --spacing-xxs: 2px;
   --spacing-xs: 4px;
@@ -58,7 +54,6 @@
   --spacing-md: 16px;
   --spacing-lg: 24px;
   --spacing-xl: 48px;
-
   /* Design system */
   --radius-sm: 2px;
   --radius-md: 4px;
@@ -73,19 +68,16 @@
   --container-width: 92%;
   --container-max: 1140px;
 }
-
 /* 2. Reset et styles de base */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
   font-size: 16px;
 }
-
 body {
   font-family: var(--font-sans);
   font-weight: var(--font-weight-normal);
@@ -93,24 +85,20 @@ body {
   color: var(--color-dark);
   background-color: var(--color-off-white);
 }
-
 img {
   max-width: 100%;
   height: auto;
   display: block;
   border-radius: var(--radius-sm);
 }
-
 .container {
   width: var(--container-width);
   max-width: var(--container-max);
   margin: 0 auto;
 }
-
 section {
   padding: var(--spacing-xl) 0;
 }
-
 /* 3. Typographie */
 h1, h2, h3, h4 {
   font-weight: var(--font-weight-bold);
@@ -119,18 +107,15 @@ h1, h2, h3, h4 {
   margin-bottom: var(--spacing-md);
   letter-spacing: -0.01em;
 }
-
 h1 {
   font-size: var(--font-size-xxl);
   letter-spacing: -0.02em;
 }
-
 h2 {
   font-size: var(--font-size-xl);
   position: relative;
   margin-bottom: var(--spacing-lg);
 }
-
 h2::after {
   content: '';
   position: absolute;
@@ -141,59 +126,47 @@ h2::after {
   background-color: var(--color-teal);
   transition: var(--transition-normal);
 }
-
 .text-center h2::after {
   left: 50%;
   transform: translateX(-50%);
 }
-
 h2:hover::after {
   width: 36px;
 }
-
 h3 {
   font-size: var(--font-size-lg);
 }
-
 h4 {
   font-size: var(--font-size-md);
 }
-
 p {
   margin-bottom: var(--spacing-md);
   color: var(--color-dark);
   line-height: 1.6;
 }
-
 a {
   text-decoration: none;
   color: var(--color-teal);
   transition: var(--transition-normal);
 }
-
 a:hover {
   color: var(--color-teal-dark);
 }
-
 /* 4. Utilitaires */
 .text-center {
   text-align: center;
 }
-
 .text-accent {
   color: var(--color-teal);
 }
-
 .mb-sm { margin-bottom: var(--spacing-sm); }
 .mb-md { margin-bottom: var(--spacing-md); }
 .mb-lg { margin-bottom: var(--spacing-lg); }
 .mb-xl { margin-bottom: var(--spacing-xl); }
-
 .center {
   text-align: center;
   margin-top: var(--spacing-lg);
 }
-
 /* 5. Composants */
 /* 5.1 Boutons */
 .btn {
@@ -217,18 +190,15 @@ a:hover {
   font-size: var(--font-size-sm);
   text-transform: uppercase;
 }
-
 .btn:hover {
   background-color: var(--color-teal-dark);
   color: white;
   transform: translateY(-1px);
   box-shadow: var(--shadow-small);
 }
-
 .btn:active {
   transform: translateY(0);
 }
-
 .btn-minimal {
   background-color: transparent;
   color: var(--color-teal);
@@ -238,7 +208,6 @@ a:hover {
   position: relative;
   box-shadow: none;
 }
-
 .btn-minimal::after {
   content: '';
   position: absolute;
@@ -251,41 +220,34 @@ a:hover {
   transform-origin: left;
   transition: transform 0.3s ease;
 }
-
 .btn-minimal:hover {
   background-color: transparent;
   color: var(--color-teal-dark);
   transform: none;
   box-shadow: none;
 }
-
 .btn-minimal:hover::after {
   transform: scaleX(1);
   background-color: var(--color-teal-dark);
 }
-
 .btn-outline {
   background-color: transparent;
   border: 1px solid var(--color-teal);
   color: var(--color-teal);
 }
-
 .btn-outline:hover {
   background-color: var(--color-teal);
   color: white;
 }
-
 .btn-small {
   padding: var(--spacing-xs) var(--spacing-md);
   font-size: var(--font-size-xs);
 }
-
 .btn-large {
   padding: var(--spacing-md) var(--spacing-lg);
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-medium);
 }
-
 /* 5.2 Cartes et grilles */
 .work-card {
   background-color: white;
@@ -297,17 +259,14 @@ a:hover {
   display: flex;
   flex-direction: column;
 }
-
 .work-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-medium);
 }
-
 .work-image {
   height: 220px;
   overflow: hidden;
 }
-
 .work-image img {
   width: 100%;
   height: 100%;
@@ -315,36 +274,30 @@ a:hover {
   border-radius: 0;
   transition: var(--transition-normal);
 }
-
 .work-card:hover .work-image img {
   transform: scale(1.02);
 }
-
 .work-info {
   padding: var(--spacing-md);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
-
 .work-info h3 {
   margin-bottom: var(--spacing-xs);
   color: var(--color-teal-dark);
   font-size: 1.1rem;
 }
-
 .work-info p {
   color: var(--color-dark);
   margin-bottom: var(--spacing-sm);
   flex-grow: 1;
   line-height: 1.5;
 }
-
 /* 5.3 Formulaires */
 .form-group {
   margin-bottom: var(--spacing-md);
 }
-
 label {
   display: block;
   margin-bottom: var(--spacing-xs);
@@ -352,7 +305,6 @@ label {
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-sm);
 }
-
 input, textarea, select {
   width: 100%;
   padding: var(--spacing-sm);
@@ -363,7 +315,6 @@ input, textarea, select {
   transition: var(--transition-fast);
   background-color: var(--color-off-white);
 }
-
 input:focus,
 textarea:focus,
 select:focus {
@@ -371,12 +322,10 @@ select:focus {
   border-color: var(--color-teal);
   box-shadow: 0 0 0 1px rgba(90, 143, 143, 0.05);
 }
-
 textarea {
   min-height: 120px;
   resize: vertical;
 }
-
 /* 6. Layout */
 /* 6.1 Header et navigation */
 header {
@@ -388,20 +337,17 @@ header {
   box-shadow: 0 1px 3px rgba(42, 51, 51, 0.02);
   transition: var(--transition-normal);
 }
-
 header.scrolled {
   padding: var(--spacing-xxs) 0;
   background-color: rgba(250, 252, 252, 0.98);
   backdrop-filter: blur(5px);
 }
-
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 60px;
 }
-
 .logo {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
@@ -411,24 +357,20 @@ nav {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
 .logo-icon {
   width: 28px;
   height: 28px;
   margin-right: 8px;
   transition: var(--transition-normal);
 }
-
 .logo:hover .logo-icon {
   transform: rotate(5deg) scale(1.05);
 }
-
 .nav-links {
   display: flex;
   list-style: none;
   gap: var(--spacing-xl);
 }
-
 .nav-link {
   font-weight: var(--font-weight-medium);
   position: relative;
@@ -437,11 +379,9 @@ nav {
   text-transform: uppercase;
   font-size: var(--font-size-xs);
 }
-
 .nav-link.active {
   color: var(--color-teal-dark);
 }
-
 .nav-link::after {
   content: '';
   position: absolute;
@@ -452,12 +392,10 @@ nav {
   background-color: var(--color-teal);
   transition: var(--transition-normal);
 }
-
 .nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
 }
-
 .menu-toggle {
   display: none;
   background: none;
@@ -466,7 +404,6 @@ nav {
   font-size: var(--font-size-xl);
   color: var(--color-teal);
 }
-
 /* 6.2 Hero et page header */
 .hero,
 .page-header {
@@ -476,15 +413,12 @@ nav {
   position: relative;
   overflow: hidden;
 }
-
 .hero {
   padding: var(--spacing-xl) 0;
 }
-
 .page-header {
   padding: var(--spacing-lg) 0;
 }
-
 .hero::before,
 .page-header::before {
   content: '';
@@ -497,13 +431,11 @@ nav {
   background-size: 60px 60px;
   opacity: 0.05;
 }
-
 .hero-content,
 .page-header-content {
   position: relative;
   z-index: 1;
 }
-
 .hero h1,
 .page-header h1 {
   color: white;
@@ -511,7 +443,6 @@ nav {
   margin-bottom: var(--spacing-xs);
   letter-spacing: 0.5px;
 }
-
 .hero p,
 .page-header p {
   font-size: var(--font-size-md);
@@ -519,7 +450,6 @@ nav {
   margin: 0 auto var(--spacing-md);
   opacity: 0.9;
 }
-
 /* 6.3 Sections de contenu */
 .works-grid {
   display: grid;
@@ -530,7 +460,6 @@ nav {
   margin-left: auto;
   margin-right: auto;
 }
-
 .about-content {
   display: flex;
   gap: var(--spacing-xl);
@@ -538,23 +467,19 @@ nav {
   max-width: 1080px;
   margin: 0 auto;
 }
-
 .about-text,
 .about-image {
   flex: 1;
 }
-
 .about-image img {
   box-shadow: var(--shadow-small);
   transition: var(--transition-normal);
   border-radius: var(--radius-sm);
 }
-
 .about-image img:hover {
   transform: scale(1.01);
   box-shadow: var(--shadow-medium);
 }
-
 .intro-text {
   max-width: 680px;
   margin: 0 auto var(--spacing-lg);
@@ -562,7 +487,6 @@ nav {
   font-size: var(--font-size-md);
   line-height: 1.7;
 }
-
 /* 6.4 Footer */
 footer {
   background-color: var(--color-off-white);
@@ -570,7 +494,6 @@ footer {
   position: relative;
   text-align: center;
 }
-
 footer::before {
   content: '';
   position: absolute;
@@ -581,7 +504,6 @@ footer::before {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--color-teal), transparent);
 }
-
 .footer-container {
   width: var(--container-width);
   max-width: 780px;
@@ -590,32 +512,27 @@ footer::before {
   flex-direction: column;
   align-items: center;
 }
-
 .footer-logo {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: var(--spacing-lg);
 }
-
 .footer-logo-img {
   width: 30px;
   height: 30px;
   margin-right: var(--spacing-sm);
   transition: var(--transition-normal);
 }
-
 .footer-logo:hover .footer-logo-img {
   transform: rotate(5deg);
 }
-
 .footer-logo-text {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
   color: var(--color-teal);
   letter-spacing: 1px;
 }
-
 .footer-about {
   font-size: var(--font-size-sm);
   color: var(--color-dark);
@@ -624,13 +541,11 @@ footer::before {
   opacity: 0.85;
   max-width: 520px;
 }
-
 .footer-nav {
   display: flex;
   justify-content: center;
   margin-bottom: var(--spacing-lg);
 }
-
 .footer-links {
   list-style: none;
   padding: 0;
@@ -639,7 +554,6 @@ footer::before {
   flex-wrap: wrap;
   gap: var(--spacing-lg);
 }
-
 .footer-link {
   color: var(--color-dark);
   font-size: var(--font-size-xs);
@@ -649,7 +563,6 @@ footer::before {
   letter-spacing: 0.5px;
   position: relative;
 }
-
 .footer-link::after {
   content: '';
   position: absolute;
@@ -660,23 +573,19 @@ footer::before {
   background-color: var(--color-teal);
   transition: var(--transition-normal);
 }
-
 .footer-link:hover {
   color: var(--color-teal);
   opacity: 1;
 }
-
 .footer-link:hover::after {
   width: 100%;
 }
-
 .footer-social {
   display: flex;
   justify-content: center;
   gap: var(--spacing-md);
   margin: var(--spacing-lg) 0;
 }
-
 .social-icon {
   display: flex;
   align-items: center;
@@ -688,21 +597,18 @@ footer::before {
   color: var(--color-teal);
   transition: var(--transition-normal);
 }
-
 .social-icon:hover {
   background-color: var(--color-teal);
   color: white;
   transform: translateY(-2px);
   box-shadow: var(--shadow-small);
 }
-
 .footer-contact {
   display: flex;
   justify-content: center;
   gap: var(--spacing-lg);
   margin-bottom: var(--spacing-lg);
 }
-
 .contact-item {
   font-size: var(--font-size-sm);
   color: var(--color-dark);
@@ -711,11 +617,9 @@ footer::before {
   align-items: center;
   gap: var(--spacing-sm);
 }
-
 .contact-item i {
   color: var(--color-teal);
 }
-
 .footer-bottom {
   padding-top: var(--spacing-lg);
   border-top: 1px solid rgba(42, 51, 51, 0.05);
@@ -723,15 +627,13 @@ footer::before {
   font-size: var(--font-size-xs);
   opacity: 0.7;
 }
-
 /* 7. Pages spécifiques */
-/* 7.1 Page Sculptures - AMÉLIORÉE */
+/* 7.1 Page Sculptures - COMPLÈTEMENT REPENSÉE */
 .sculptures-section {
   background-color: var(--color-light-gray);
   padding: var(--spacing-xl) 0;
   position: relative;
 }
-
 .sculptures-section::before {
   content: '';
   position: absolute;
@@ -743,7 +645,6 @@ footer::before {
   opacity: 0.4;
   z-index: 0;
 }
-
 .filter-tags {
   display: flex;
   flex-wrap: wrap;
@@ -753,7 +654,6 @@ footer::before {
   position: relative;
   z-index: 2;
 }
-
 .filter-tag {
   background-color: transparent;
   padding: var(--spacing-xs) var(--spacing-md);
@@ -766,13 +666,11 @@ footer::before {
   letter-spacing: 0.5px;
   position: relative;
 }
-
 .filter-tag:hover {
   color: var(--color-teal);
   border-color: var(--color-teal-light);
   background-color: rgba(255, 255, 255, 0.5);
 }
-
 .filter-tag.active {
   background-color: white;
   color: var(--color-teal-dark);
@@ -780,7 +678,6 @@ footer::before {
   font-weight: var(--font-weight-medium);
   box-shadow: var(--shadow-small);
 }
-
 /* Container avec titre de section et description */
 .sculptures-header {
   text-align: center;
@@ -789,41 +686,71 @@ footer::before {
   position: relative;
   z-index: 2;
 }
-
 .sculptures-header h2 {
   color: var(--color-teal-dark);
   margin-bottom: var(--spacing-md);
 }
-
 .sculptures-header p {
   color: var(--color-dark);
   opacity: 0.9;
   font-size: var(--font-size-md);
 }
 
-/* Grille de sculptures complètement repensée */
+/* Nouvelle disposition des sculptures avec grille améliorée */
 .sculptures-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--spacing-lg);
-  width: 90%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(280px, auto);
+  gap: var(--spacing-md);
+  width: 92%;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
 }
 
+/* Disposition avec certaines sculptures plus grandes */
 .sculpture-card {
-  background-color: white;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-medium);
   transition: var(--transition-normal);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
   transform-origin: center bottom;
+  background-color: white;
+}
+
+/* Faire en sorte que certaines sculptures occupent plus d'espace */
+.sculpture-card:nth-child(1),
+.sculpture-card:nth-child(4),
+.sculpture-card:nth-child(8) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.sculpture-card:nth-child(6) {
+  grid-row: span 2;
+}
+
+/* Ajuster la hauteur des images en fonction des différentes tailles */
+.sculpture-img {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  min-height: 240px;
+}
+
+.sculpture-card:nth-child(1) .sculpture-img,
+.sculpture-card:nth-child(4) .sculpture-img,
+.sculpture-card:nth-child(8) .sculpture-img {
+  min-height: 380px;
+}
+
+.sculpture-card:nth-child(6) .sculpture-img {
+  min-height: 320px;
 }
 
 .sculpture-card::after {
@@ -844,12 +771,6 @@ footer::before {
 
 .sculpture-card:hover::after {
   width: 100%;
-}
-
-.sculpture-img {
-  height: 700px;
-  position: relative;
-  overflow: hidden;
 }
 
 .sculpture-img img {
@@ -978,6 +899,7 @@ footer::before {
   margin-bottom: var(--spacing-lg);
   display: block;
 }
+
 
 /* Bouton "Voir plus" pour charger d'autres sculptures */
 .load-more {

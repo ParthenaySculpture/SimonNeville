@@ -725,154 +725,411 @@ footer::before {
 }
 
 /* 7. Pages spécifiques */
-/* 7.1 Page Sculptures */
-.filter-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-lg);
-  justify-content: center;
-}
-
-.filter-tag {
-  background-color: transparent;
-  padding: var(--spacing-xs) var(--spacing-md);
-  border-radius: 0;
-  cursor: pointer;
-  transition: var(--transition-normal);
-  color: var(--color-dark);
-  border-bottom: 1px solid transparent;
-  font-size: var(--font-size-xs);
-  letter-spacing: 0.5px;
-}
-
-.filter-tag:hover {
-  color: var(--color-teal);
-  border-bottom: 1px solid var(--color-teal);
-}
-
-.filter-tag.active {
-  background-color: transparent;
-  color: var(--color-teal-dark);
-  border-bottom: 1px solid var(--color-teal);
-  font-weight: var(--font-weight-medium);
-}
-
-/* Modification: grille de sculptures avec nombre fixe de colonnes */
-.sculptures-grid {
-  display: grid;
-  width: 80%;
-  grid-template-columns: repeat(4, 1fr); /* 4 sculptures par ligne */
-  gap: var(--spacing-md);
-  max-width: 800px;
-  margin: 0 auto var(--spacing-lg);
-}
-
-.sculpture-card {
-  width: 90%; /* Réduit la largeur des cartes */
-  margin: 0 auto; /* Centre les cartes */
-  background-color: white;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  box-shadow: var(--shadow-small);
-  transition: var(--transition-normal);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  margin: var(--spacing-xs); /* Ajouter une marge pour éviter que les cartes ne se touchent */
-}
-
-.sculpture-card::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: var(--color-teal);
-  opacity: 0;
-  transition: var(--transition-normal);
-}
-
-.sculpture-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-medium);
-}
-
-.sculpture-card:hover::before {
-  opacity: 0.5;
-}
-
-.sculpture-img {
-  height: 200px; /* Ajustez selon vos besoins */
-  width: 80%; /* Réduit la largeur des images */
-  margin: 0 auto; /* Centre les images */
-  overflow: hidden;
+/* 7.1 Page Sculptures - AMÉLIORÉE */
+.sculptures-section {
+  background-color: var(--color-light-gray);
+  padding: var(--spacing-xl) 0;
   position: relative;
 }
 
-.sculpture-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0;
-  transition: var(--transition-normal);
-}
-
-.sculpture-card:hover .sculpture-img img {
-  transform: scale(1.02);
-}
-
-.sculpture-img::after {
+.sculptures-section::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(90, 143, 143, 0.02), transparent);
-  opacity: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h40v40H0z" fill="none"/><path d="M0 0h20v20H0z" fill="rgba(90, 143, 143, 0.03)"/><path d="M20 20h20v20H20z" fill="rgba(90, 143, 143, 0.03)"/></svg>');
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.filter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.filter-tag {
+  background-color: transparent;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  color: var(--color-dark);
+  border: 1px solid transparent;
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.filter-tag:hover {
+  color: var(--color-teal);
+  border-color: var(--color-teal-light);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.filter-tag.active {
+  background-color: white;
+  color: var(--color-teal-dark);
+  border-color: var(--color-teal-light);
+  font-weight: var(--font-weight-medium);
+  box-shadow: var(--shadow-small);
+}
+
+/* Container avec titre de section et description */
+.sculptures-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--spacing-lg);
+  position: relative;
+  z-index: 2;
+}
+
+.sculptures-header h2 {
+  color: var(--color-teal-dark);
+  margin-bottom: var(--spacing-md);
+}
+
+.sculptures-header p {
+  color: var(--color-dark);
+  opacity: 0.9;
+  font-size: var(--font-size-md);
+}
+
+/* Grille de sculptures complètement repensée */
+.sculptures-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.sculpture-card {
+  background-color: white;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+  transition: var(--transition-normal);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transform-origin: center bottom;
+}
+
+.sculpture-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--color-teal-light), var(--color-teal));
   transition: var(--transition-normal);
 }
 
-.sculpture-card:hover .sculpture-img::after {
+.sculpture-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-large);
+}
+
+.sculpture-card:hover::after {
+  width: 100%;
+}
+
+.sculpture-img {
+  height: 240px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sculpture-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-normal);
+}
+
+.sculpture-card:hover .sculpture-img img {
+  transform: scale(1.05);
+}
+
+.sculpture-img::before {
+  content: '';
+  position: absolute;
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 70%, rgba(0,0,0,0.2));
+  opacity: 0;
+  transition: var(--transition-normal);
+  z-index: 1;
+}
+
+.sculpture-card:hover .sculpture-img::before {
   opacity: 1;
 }
 
 .sculpture-info {
-  padding: var(--spacing-sm);
+  padding: var(--spacing-md);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  background-color: white;
+  position: relative;
 }
 
 .sculpture-info h3 {
-  margin-bottom: var(--spacing-xs);
   color: var(--color-teal-dark);
-  font-size: 0.95rem;
-  letter-spacing: 0.25px;
+  font-size: var(--font-size-md);
+  margin-bottom: var(--spacing-xs);
+  position: relative;
+  padding-bottom: var(--spacing-xs);
+}
+
+.sculpture-info h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 1px;
+  background-color: var(--color-teal-light);
 }
 
 .sculpture-info p {
   color: var(--color-dark);
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
   flex-grow: 1;
-  font-size: var(--font-size-xs);
-  line-height: 1.5;
 }
 
 .sculpture-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: var(--spacing-xs);
+  padding-top: var(--spacing-sm);
   border-top: 1px solid var(--color-light-gray);
 }
 
 .price {
   font-weight: var(--font-weight-bold);
   color: var(--color-teal);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
+}
+
+.sculpture-action {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.sculpture-tag {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  background-color: rgba(255, 255, 255, 0.85);
+  color: var(--color-teal-dark);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  padding: var(--spacing-xxs) var(--spacing-sm);
+  border-radius: var(--radius-pill);
+  z-index: 2;
+  backdrop-filter: blur(2px);
+}
+
+.sculpture-ribbon {
+  position: absolute;
+  top: 15px;
+  left: -30px;
+  background-color: var(--color-teal);
+  color: white;
+  font-size: var(--font-size-xs);
+  padding: var(--spacing-xxs) var(--spacing-lg);
+  transform: rotate(-45deg);
+  z-index: 2;
+  font-weight: var(--font-weight-medium);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Style d'affichage alternatif avec masonry */
+.sculptures-masonry {
+  columns: 4;
+  column-gap: var(--spacing-lg);
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.sculptures-masonry .sculpture-card {
+  break-inside: avoid;
+  margin-bottom: var(--spacing-lg);
+  display: block;
+}
+
+/* Bouton "Voir plus" pour charger d'autres sculptures */
+.load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-xl);
+  position: relative;
+  z-index: 2;
+}
+
+.btn-load-more {
+  background-color: white;
+  color: var(--color-teal);
+  border: 1px solid var(--color-teal);
+  padding: var(--spacing-sm) var(--spacing-xl);
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.5px;
+  transition: var(--transition-normal);
+  display: inline-flex;
+  align-items: center
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.btn-load-more:hover {
+  background-color: var(--color-teal);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-load-more:active {
+  transform: translateY(0);
+}
+
+.btn-load-more i {
+  transition: var(--transition-fast);
+}
+
+.btn-load-more:hover i {
+  transform: translateY(2px);
+}
+
+/* Animation d'apparition pour les sculptures */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sculpture-card {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.sculpture-card:nth-child(2) { animation-delay: 0.1s; }
+.sculpture-card:nth-child(3) { animation-delay: 0.2s; }
+.sculpture-card:nth-child(4) { animation-delay: 0.3s; }
+.sculpture-card:nth-child(5) { animation-delay: 0.4s; }
+.sculpture-card:nth-child(6) { animation-delay: 0.5s; }
+.sculpture-card:nth-child(7) { animation-delay: 0.6s; }
+.sculpture-card:nth-child(8) { animation-delay: 0.7s; }
+
+/* Vue détaillée d'une sculpture */
+.sculpture-detail {
+  display: flex;
+  gap: var(--spacing-xl);
+  max-width: 1080px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-medium);
+  overflow: hidden;
+}
+
+.sculpture-detail-image {
+  flex: 1.2;
+  position: relative;
+  min-height: 400px;
+}
+
+.sculpture-detail-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sculpture-detail-info {
+  flex: 1;
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+.sculpture-detail-title {
+  color: var(--color-teal-dark);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  padding-bottom: var(--spacing-md);
+}
+
+.sculpture-detail-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--color-teal);
+}
+
+.sculpture-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.sculpture-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.meta-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.meta-value {
+  font-size: var(--font-size-md);
+  color: var(--color-dark);
+  font-weight: var(--font-weight-medium);
+}
+
+.sculpture-detail-description {
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.7;
+}
+
+.sculpture-actions {
+  margin-top: auto;
+  display: flex;
+  gap: var(--spacing-md);
 }
 
 /* 7.2 Page Contact */
@@ -959,18 +1216,55 @@ footer::before {
 }
 
 /* 8. Media Queries */
+@media (max-width: 1200px) {
+  .sculptures-grid {
+    grid-template-columns: repeat(3, 1fr);
+    width: 95%;
+  }
+  
+  .sculptures-masonry {
+    columns: 3;
+    width: 95%;
+  }
+  
+  .sculpture-detail {
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .sculpture-detail-image {
+    min-height: 300px;
+  }
+}
+
 @media (max-width: 992px) {
   .container {
     width: 95%;
   }
+  
   .works-grid {
     gap: var(--spacing-md);
   }
+  
   /* 3 sculptures par ligne sur écrans moyens */
   .sculptures-grid {
-    grid-template-columns: repeat(3, 1fr);
-    width: 85%; /* Réduire la largeur globale de la grille */
-    margin: 0 auto; /* Centrer la grille */
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    gap: var(--spacing-md);
+  }
+  
+  .sculptures-masonry {
+    columns: 2;
+    width: 90%;
+  }
+  
+  .sculpture-img {
+    height: 220px;
+  }
+  
+  .sculpture-card:nth-child(n+5) {
+    animation-delay: 0.2s; /* Réinitialiser les délais d'animation pour les écrans plus petits */
   }
 }
 
@@ -978,23 +1272,29 @@ footer::before {
   html {
     font-size: 15px;
   }
+  
   .about-content,
   .contact-wrapper {
     flex-direction: column;
     gap: var(--spacing-lg);
   }
+  
   header {
     padding: var(--spacing-xxs) 0;
   }
+  
   nav {
     height: 50px;
   }
+  
   .nav-links {
     display: none;
   }
+  
   .menu-toggle {
     display: block;
   }
+  
   .nav-links.active {
     display: flex;
     flex-direction: column;
@@ -1007,21 +1307,69 @@ footer::before {
     padding: var(--spacing-sm);
     z-index: 100;
   }
+  
   .footer-contact {
     flex-direction: column;
     gap: var(--spacing-md);
   }
-  /* 2 sculptures par ligne sur tablettes */
+  
+  /* Adaptations pour la section sculptures */
   .sculptures-grid {
     grid-template-columns: repeat(2, 1fr);
-    width: 80%; /* Réduire davantage la largeur sur tablettes */
-    margin: 0 auto;
+    width: 95%;
+    gap: var(--spacing-sm);
   }
+  
+  .sculptures-masonry {
+    columns: 2;
+    column-gap: var(--spacing-sm);
+    width: 95%;
+  }
+  
   .sculpture-img {
-    height: 140px; /* Réduire la hauteur de l'image */
+    height: 180px;
   }
-  .sculpture-card {
-    max-height: 260px; /* Réduire la hauteur maximale de la carte */
+  
+  .sculpture-info h3 {
+    font-size: var(--font-size-sm);
+  }
+  
+  .sculpture-info p {
+    font-size: var(--font-size-xs);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .price {
+    font-size: var(--font-size-sm);
+  }
+  
+  .filter-tags {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .filter-tags::-webkit-scrollbar {
+    height: 4px;
+  }
+  
+  .filter-tags::-webkit-scrollbar-thumb {
+    background-color: var(--color-teal-light);
+    border-radius: var(--radius-pill);
+  }
+  
+  .filter-tag {
+    flex-shrink: 0;
+  }
+  
+  .filter-tag.active {
+    background-color: var(--color-teal-light);
+    color: white;
+  }
+  
+  .sculpture-detail {
+    width: 95%;
   }
 }
 
@@ -1029,35 +1377,64 @@ footer::before {
   html {
     font-size: 14px;
   }
+  
   .hero h1,
   .page-header h1 {
     font-size: 1.8rem;
   }
+  
   .hero p,
   .page-header p {
     font-size: var(--font-size-sm);
   }
+  
   .works-grid {
     grid-template-columns: 1fr;
   }
+  
+  /* 1 sculpture par ligne sur mobile */
   .sculptures-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-sm);
-    width: 95%; /* Ajuster pour les petits écrans */
+    grid-template-columns: 1fr;
+    width: 90%;
   }
+  
+  .sculptures-masonry {
+    columns: 1;
+    width: 90%;
+  }
+  
   .sculpture-img {
-    height: 120px; /* Réduire la hauteur de l'image */
+    height: 240px; /* Plus grand sur mobile pour mieux voir */
   }
-  .sculpture-card {
-    max-height: 240px; /* Réduire la hauteur maximale de la carte */
+  
+  .sculpture-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
   }
+  
+  .sculpture-action {
+    width: 100%;
+  }
+  
+  .btn-load-more {
+    width: 100%;
+    justify-content: center;
+  }
+  
   .btn {
     padding: var(--spacing-xs) var(--spacing-md);
+    width: 100%;
+    justify-content: center;
   }
+  
   .footer-links {
     flex-direction: column;
     gap: var(--spacing-md);
   }
+  
+  .sculpture-detail-meta {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
 }
-
-

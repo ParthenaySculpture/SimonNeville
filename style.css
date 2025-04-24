@@ -944,6 +944,75 @@ footer::before {
   transform: translateY(2px);
 }
 
+/* Style original pour le bouton de la classe .center */
+.center .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  background-color: var(--color-teal);
+  color: white;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--radius-pill);
+  font-weight: var(--font-weight-bold);
+  transition: var(--transition-normal);
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: var(--font-size-md);
+  text-transform: uppercase;
+  box-shadow: var(--shadow-medium);
+}
+
+.center .btn:hover {
+  background-color: var(--color-teal-dark);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-large);
+}
+
+.center .btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-small);
+}
+
+.center .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.center .btn:hover::before {
+  opacity: 1;
+}
+
+.center .btn::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-teal-light);
+  transition: width 0.3s ease;
+}
+
+.center .btn:hover::after {
+  width: 100%;
+  left: 0;
+}
+
 /* Animation d'apparition pour les sculptures */
 @keyframes fadeInUp {
   from {

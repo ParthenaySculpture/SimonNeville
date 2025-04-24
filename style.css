@@ -758,9 +758,10 @@ footer::before {
   font-weight: var(--font-weight-medium);
 }
 
+/* Modification: grille de sculptures avec nombre fixe de colonnes */
 .sculptures-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Réduire la largeur minimale */
+  grid-template-columns: repeat(4, 1fr); /* 4 sculptures par ligne */
   gap: var(--spacing-md);
   max-width: 1000px;
   margin: 0 auto var(--spacing-lg);
@@ -958,13 +959,13 @@ footer::before {
     width: 95%;
   }
 
-  .works-grid,
-  .sculptures-grid {
+  .works-grid {
     gap: var(--spacing-md);
   }
 
+  /* 3 sculptures par ligne sur écrans moyens */
   .sculptures-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Réduire la largeur minimale */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -1013,8 +1014,9 @@ footer::before {
     gap: var(--spacing-md);
   }
 
+  /* 2 sculptures par ligne sur tablettes */
   .sculptures-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Réduire la largeur minimale */
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .sculpture-img {

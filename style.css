@@ -1188,6 +1188,9 @@ footer::before {
   margin-bottom: var(--spacing-sm);
   color: var(--color-teal-dark);
 }
+.map {
+  margin-top: var(--spacing-lg);
+}
 
 
 .map-container {
